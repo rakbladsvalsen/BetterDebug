@@ -1,12 +1,17 @@
 [package]
 name = "better-debug"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+license = "MIT"
+description = "A cooler, and sane Debug macro"
+repository = "https://github.com/rakbladsvalsen/BetterDebug"
+readme = "README.md"
+keywords = ["debug", "macro", "better", "print", "secret"]
+categories = ["development-tools::procedural-macro-helpers"]
+
 
 [lib]
 proc-macro = true
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 darling = "0.20.3"

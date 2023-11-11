@@ -31,11 +31,6 @@ fn some_func(s: &Test) -> Option<String>{
 }
 ```
 
-## TODO
-
-- Add tests
-- Upload to crates.io
-- Add more documentation
 
 ## License
 
