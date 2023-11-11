@@ -24,8 +24,7 @@ use syn::{parse_macro_input, DeriveInput};
 
 mod inner;
 
-///
-/// # Usage
+/// # Macro usage
 ///
 /// Add the following to your Cargo.toml:
 ///

@@ -1,5 +1,9 @@
 # BetterDebug: Saner and cooler Debug macro for rust
 
+[![Continuous integration](https://github.com/rakbladsvalsen/BetterDebug/actions/workflows/ci.yml/badge.svg)](https://github.com/rakbladsvalsen/BetterDebug/actions/workflows/ci.yml)
+[![docs](https://docs.rs/better-debug/badge.svg)](https://docs.rs/better-debug)
+
+
 This crate aims to provide a nice, and actually sane implementation of the `Debug`
 trait.
 
@@ -12,25 +16,25 @@ This macro provides the following features, compared to the standard library `De
 
 ## Examples
 
+Note: You can find more examples [here](https://docs.rs/better-debug/1.0.0/better_debug/).
+
 ```rust
+ use better_debug::BetterDebug;
 
-#[derive(BetterDebug)]
-struct Test{
-    username: String,
-    #[better_debug(cust_formatter="some_func", cust_formatter_skip_if_none)]
-    name: String,
-    #[better_debug(secret, rename_to="Super safe user's password")]
-    password: String,
-}
+ fn foo(foo: &Foo) -> Option<&'static str> {
+     if foo.bar.len() < 5 {
+         return Some("lorem ipsum");
+     }
+     None
+ }
 
-fn some_func(s: &Test) -> Option<String>{
-    if s.name == String::from("123"){
-        return Some("INVALID NAME!!!".into());
-    }
-    None
+ #[derive(BetterDebug)]
+ struct Foo {
+     #[better_debug(cust_formatter = "foo")]
+     bar: String,
+     baz: String,
 }
 ```
-
 
 ## License
 
